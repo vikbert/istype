@@ -22,7 +22,14 @@ class IsTest extends TestCase
     public function testIsDouble(): void
     {
         $this->assertTrue(Is::double(123.12));
-        $this->assertFalse(Is::bool(false));
+        $this->assertFalse(Is::double(123));
+        $this->assertFalse(Is::double(false));
+    }
+
+    public function testIsInt(): void
+    {
+        $this->assertTrue(Is::int(123));
+        $this->assertFalse(Is::int(false));
     }
 }
 

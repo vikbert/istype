@@ -6,6 +6,9 @@ namespace Vikbert;
 
 final class Is
 {
+    /**
+     * @param mixed $value
+     */
     public static function string($value): bool
     {
         return is_string($value);
@@ -22,5 +25,15 @@ final class Is
     public static function double($value): bool
     {
         return is_double($value);
+    }
+
+    public static function float($value): bool
+    {
+        return is_double($value);
+    }
+
+    public static function int($value): bool
+    {
+        return is_int($value);
     }
 }
