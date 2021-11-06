@@ -36,4 +36,9 @@ final class Is
     {
         return is_int($value);
     }
+
+    public static function integer($value): bool
+    {
+        return is_int($value);
+    }
 }
