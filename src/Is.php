@@ -41,4 +41,9 @@ final class Is
     {
         return is_int($value);
     }
+
+    public static function numeric($value): bool
+    {
+        return is_numeric($value);
+    }
 }

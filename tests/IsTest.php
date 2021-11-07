@@ -38,5 +38,11 @@ class IsTest extends TestCase
         $this->assertFalse(Is::integer(false));
     }
 
+    public function testIsNumeric(): void
+    {
+        $this->assertTrue(Is::numeric(123));
+        $this->assertFalse(Is::numeric(false));
+    }
+
 }
 
