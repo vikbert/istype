@@ -3,6 +3,7 @@
 namespace Vikbert\Tests;
 
 use PHPUnit\Framework\TestCase;
+use stdClass;
 use Vikbert\Is;
 
 class IsTest extends TestCase
@@ -42,6 +43,14 @@ class IsTest extends TestCase
     {
         $this->assertTrue(Is::numeric(123));
         $this->assertFalse(Is::numeric(false));
+    }
+
+    public function testIsObject(): void
+    {
+        $this->assertTrue(Is::object(new stdClass()));
+        $this->assertFalse(Is::object(123));
+        $this->assertFalse(Is::object(null));
+        $this->assertFalse(Is::object(true));
     }
 
 }

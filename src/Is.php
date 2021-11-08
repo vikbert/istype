@@ -46,4 +46,28 @@ final class Is
     {
         return is_numeric($value);
     }
+
+    public static function object($value): bool
+    {
+        return is_object($value);
+    }
+
+    /**
+     * is_object
+     * is_scalar
+     * is_array
+     * empty
+     * callable
+     * countable
+     * iterable
+     * email
+     * url
+     * http
+     * https
+     * file
+     * image
+     * pdf
+     * json
+     * xml
+     */
 }
