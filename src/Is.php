@@ -52,8 +52,12 @@ final class Is
         return is_object($value);
     }
 
+    public static function scalar($value): bool
+    {
+        return is_scalar($value);
+    }
+
     /**
-     * is_object
      * is_scalar
      * is_array
      * empty

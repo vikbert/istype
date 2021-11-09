@@ -53,5 +53,13 @@ class IsTest extends TestCase
         $this->assertFalse(Is::object(true));
     }
 
+    public function testIsScalar(): void
+    {
+        $this->assertTrue(Is::scalar(123));
+        $this->assertTrue(Is::scalar(true));
+        $this->assertFalse(Is::scalar(null));
+        $this->assertFalse(Is::scalar([]));
+    }
+
 }
 
