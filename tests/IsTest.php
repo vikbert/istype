@@ -61,5 +61,11 @@ class IsTest extends TestCase
         $this->assertFalse(Is::scalar([]));
     }
 
+    public function testIsArray(): void
+    {
+        $this->assertTrue(Is::array([]));
+        $this->assertFalse(Is::array(123));
+    }
+
 }
 

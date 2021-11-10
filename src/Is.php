@@ -57,8 +57,12 @@ final class Is
         return is_scalar($value);
     }
 
+    public static function array($value): bool
+    {
+        return is_array($value);
+    }
+
     /**
-     * is_scalar
      * is_array
      * empty
      * callable
