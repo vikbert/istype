@@ -62,12 +62,29 @@ final class Is
         return is_array($value);
     }
 
+    public static function callable($value): bool
+    {
+        return is_callable($value);
+    }
+
+    public static function countable($value): bool
+    {
+        return is_countable($value);
+    }
+
+    public static function iterable($value): bool
+    {
+        return is_iterable($value);
+    }
+
+    public static function email($value): bool
+    {
+        $filtered = filter_var($value, FILTER_VALIDATE_EMAIL);
+
+        return false !== $filtered;
+    }
+
     /**
-     * is_array
-     * empty
-     * callable
-     * countable
-     * iterable
      * email
      * url
      * http

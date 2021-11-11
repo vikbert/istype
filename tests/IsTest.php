@@ -67,5 +67,12 @@ class IsTest extends TestCase
         $this->assertFalse(Is::array(123));
     }
 
+    public function testIsEmail(): void
+    {
+        $this->assertTrue(Is::email('xun.zhou@mail.schwarz'));
+        $this->assertFalse(Is::email('xun.zhou@mail'));
+        $this->assertFalse(Is::email('@mail.schwarz'));
+    }
+
 }
 
