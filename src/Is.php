@@ -79,14 +79,15 @@ final class Is
 
     public static function email($value): bool
     {
-        $filtered = filter_var($value, FILTER_VALIDATE_EMAIL);
+        return false !== filter_var($value, FILTER_VALIDATE_EMAIL);
+    }
 
-        return false !== $filtered;
+    public static function url($value): bool
+    {
+        return false !== filter_var($value, FILTER_VALIDATE_URL);
     }
 
     /**
-     * email
-     * url
      * http
      * https
      * file

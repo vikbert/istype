@@ -74,5 +74,16 @@ class IsTest extends TestCase
         $this->assertFalse(Is::email('@mail.schwarz'));
     }
 
+    public function testIsUrl(): void
+    {
+        $this->assertTrue(Is::url('http://localhost'));
+        $this->assertTrue(Is::url('http://localhost.com'));
+        $this->assertTrue(Is::url('ftp://localhost.com'));
+
+        $this->assertFalse(Is::url('://localhost.com'));
+        $this->assertFalse(Is::url('http:/localhost.com'));
+        $this->assertFalse(Is::url('http://.com'));
+    }
+
 }
 
