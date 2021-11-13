@@ -87,6 +87,20 @@ final class Is
         return false !== filter_var($value, FILTER_VALIDATE_URL);
     }
 
+    public static function https($value): bool
+    {
+        $url = parse_url($value);
+
+        return strtolower($url['scheme']) == 'https';
+    }
+
+    public static function http($value): bool
+    {
+        $url = parse_url($value);
+
+        return strtolower($url['scheme']) == 'http';
+    }
+
     /**
      * http
      * https

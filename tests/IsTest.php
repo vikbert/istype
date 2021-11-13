@@ -85,5 +85,17 @@ class IsTest extends TestCase
         $this->assertFalse(Is::url('http://.com'));
     }
 
+    public function testIsHttps(): void
+    {
+        $this->assertTrue(Is::https('https://localhost'));
+        $this->assertFalse(Is::https('http://localhost.com'));
+    }
+
+    public function testIsHttp(): void
+    {
+        $this->assertTrue(Is::http('http://localhost'));
+        $this->assertFalse(Is::http('https://localhost.com'));
+    }
+
 }
 
