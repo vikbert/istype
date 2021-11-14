@@ -101,9 +101,12 @@ final class Is
         return strtolower($url['scheme']) == 'http';
     }
 
+    public static function file($value): bool
+    {
+        return is_file($value);
+    }
+
     /**
-     * http
-     * https
      * file
      * image
      * pdf

@@ -97,5 +97,11 @@ class IsTest extends TestCase
         $this->assertFalse(Is::http('https://localhost.com'));
     }
 
+    public function testIsFile(): void
+    {
+        $this->assertTrue(Is::file(__DIR__ . '/foo.txt') );
+        $this->assertFalse(Is::file(__DIR__ . '/bar.txt'));
+    }
+
 }
 
