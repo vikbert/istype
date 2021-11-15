@@ -103,5 +103,11 @@ class IsTest extends TestCase
         $this->assertFalse(Is::file(__DIR__ . '/bar.txt'));
     }
 
+    public function testIsImage(): void
+    {
+        $this->assertTrue(Is::image(__DIR__ . '/bar.jpeg') );
+        $this->assertFalse(Is::image(__DIR__ . '/bar.txt'));
+    }
+
 }
 

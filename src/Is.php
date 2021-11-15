@@ -107,7 +107,14 @@ final class Is
     }
 
     /**
-     * file
+     * Determine if the target value is an image file
+     * @param mixed $value
+     */
+    public static function image($value): bool
+    {
+        return @is_array(getimagesize($value));
+    }
+    /**
      * image
      * pdf
      * json
