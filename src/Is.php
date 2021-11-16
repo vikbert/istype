@@ -114,8 +114,14 @@ final class Is
     {
         return @is_array(getimagesize($value));
     }
+
+    public static function pdf($value): bool
+    {
+        $mimes = mime_content_type($value);
+
+        return $mimes && strtolower($mimes) === 'application/pdf';
+    }
     /**
-     * image
      * pdf
      * json
      * xml

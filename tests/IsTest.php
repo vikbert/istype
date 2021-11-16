@@ -99,14 +99,20 @@ class IsTest extends TestCase
 
     public function testIsFile(): void
     {
-        $this->assertTrue(Is::file(__DIR__ . '/foo.txt') );
+        $this->assertTrue(Is::file(__DIR__ . '/foo.txt'));
         $this->assertFalse(Is::file(__DIR__ . '/bar.txt'));
     }
 
     public function testIsImage(): void
     {
-        $this->assertTrue(Is::image(__DIR__ . '/bar.jpeg') );
-        $this->assertFalse(Is::image(__DIR__ . '/bar.txt'));
+        $this->assertTrue(Is::image(__DIR__ . '/bar.jpeg'));
+        $this->assertFalse(Is::image(__DIR__ . '/foo.txt'));
+    }
+
+    public function testIsPdf(): void
+    {
+        $this->assertTrue(Is::pdf(__DIR__ . '/foo.pdf'));
+        $this->assertFalse(Is::pdf(__DIR__ . '/foo.txt'));
     }
 
 }
