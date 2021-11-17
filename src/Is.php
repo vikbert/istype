@@ -121,8 +121,15 @@ final class Is
 
         return $mimes && strtolower($mimes) === 'application/pdf';
     }
+
+    public static function json($value): bool
+    {
+        json_decode($value);
+
+        return json_last_error() === JSON_ERROR_NONE;
+    }
+
     /**
-     * pdf
      * json
      * xml
      */

@@ -115,5 +115,14 @@ class IsTest extends TestCase
         $this->assertFalse(Is::pdf(__DIR__ . '/foo.txt'));
     }
 
+    public function testIsJson(): void
+    {
+        $this->assertTrue(Is::json('[]'));
+        $this->assertTrue(Is::json('{}'));
+        $this->assertTrue(Is::json('{"1": 1}'));
+        
+        $this->assertFalse(Is::json('{1: 1}'));
+    }
+
 }
 
