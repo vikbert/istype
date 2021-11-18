@@ -120,9 +120,33 @@ class IsTest extends TestCase
         $this->assertTrue(Is::json('[]'));
         $this->assertTrue(Is::json('{}'));
         $this->assertTrue(Is::json('{"1": 1}'));
-        
+
         $this->assertFalse(Is::json('{1: 1}'));
     }
 
+    public function testIsXml(): void
+    {
+        $validXml = $string = <<<XML
+<?xml version='1.0'?>
+<document>
+ <title>hello</title>
+</document>
+XML;
+        $invalidXml = $string = <<<XML
+<?xml version='1.0'?>
+<document>
+ <title>hello
+</document>
+XML;
+
+        $this->assertTrue(Is::xml($validXml));
+        $this->assertFalse(Is::xml($invalidXml));
+    }
+
+    public function testIsIp(): void
+    {
+        $this->assertTrue(Is::ip('127.0.0.1'));
+        $this->assertFalse(Is::ip('127.0'));
+    }
 }
 

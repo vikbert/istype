@@ -4,6 +4,8 @@ declare(strict_types = 1);
 
 namespace Vikbert;
 
+use Throwable;
+
 final class Is
 {
     /**
@@ -129,8 +131,19 @@ final class Is
         return json_last_error() === JSON_ERROR_NONE;
     }
 
-    /**
-     * json
-     * xml
-     */
+    public static function xml($value): bool
+    {
+        try {
+            simplexml_load_string($value);
+        } catch (Throwable $exception) {
+            return false;
+        }
+
+        return true;
+    }
+
+    public static function ip($value): bool
+    {
+        return false !== filter_var($value, FILTER_VALIDATE_IP);
+    }
 }
