@@ -103,38 +103,39 @@ final class Is
         return strtolower($url['scheme']) == 'http';
     }
 
-    public static function file($value): bool
+    public static function file(string $fileName): bool
     {
-        return is_file($value);
+        return is_file($fileName);
     }
 
     /**
      * Determine if the target value is an image file
-     * @param mixed $value
+     *
+     * @param mixed $fileName
      */
-    public static function image($value): bool
+    public static function image(string $fileName): bool
     {
-        return @is_array(getimagesize($value));
+        return @is_array(getimagesize($fileName));
     }
 
-    public static function pdf($value): bool
+    public static function pdf(string $fileName): bool
     {
-        $mimes = mime_content_type($value);
+        $mimes = mime_content_type($fileName);
 
         return $mimes && strtolower($mimes) === 'application/pdf';
     }
 
-    public static function json($value): bool
+    public static function json(string $jsonContent): bool
     {
-        json_decode($value);
+        json_decode($jsonContent);
 
         return json_last_error() === JSON_ERROR_NONE;
     }
 
-    public static function xml($value): bool
+    public static function xml(string $xmlContent): bool
     {
         try {
-            simplexml_load_string($value);
+            simplexml_load_string($xmlContent);
         } catch (Throwable $exception) {
             return false;
         }
@@ -142,7 +143,7 @@ final class Is
         return true;
     }
 
-    public static function ip($value): bool
+    public static function ip(string $value): bool
     {
         return false !== filter_var($value, FILTER_VALIDATE_IP);
     }
