@@ -1,6 +1,7 @@
 {
     "name": "vikbert/istype",
     "description": "A simple PHP library for type checking",
+    "version": "1.0.0",
     "license": "MIT",
     "authors": [
         {
