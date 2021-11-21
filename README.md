@@ -15,19 +15,21 @@
 
 ---
 
-## Install
-```bash
-composer install --no-interaction --dev
+## Example
+```php
+$isEmail = Is::email('xun.zhou@mail.schwarz'); //=> true
+$isEmail = Is::email('xun.zhou@mail'); //=> false
 ```
 
-## Update
+
+## Install
 ```bash
-composer update 
+composer req vikbert/istype
 ```
 
 ## Test
 ```bash
-phpunit tests 
+vendor/bin/phpunit
 ```
 
 
