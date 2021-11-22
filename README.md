@@ -1,7 +1,7 @@
 <div align="center">
-  <img src="./docs/composer.png" width="140px" alt="aino" />
-  <h2>PHP Type Checker</h2>
-  <p>A simple library to check the type in PHP</p>
+  <img src="./docs/logo.png" width="140px" alt="logo" />
+  <h2>Is::</h2>
+  <p>Type checks values in PHP</p>
 
   <p>
     <a href="#">
