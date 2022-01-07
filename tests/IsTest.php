@@ -12,5 +12,17 @@ class IsTest extends TestCase
         $this->assertTrue(Is::string('abc'));
         $this->assertFalse(Is::string(123));
     }
+
+    public function testIsBool(): void
+    {
+        $this->assertTrue(Is::bool(true));
+        $this->assertTrue(Is::bool(false));
+    }
+
+    public function testIsDouble(): void
+    {
+        $this->assertTrue(Is::double(123.12));
+        $this->assertFalse(Is::bool(false));
+    }
 }
 

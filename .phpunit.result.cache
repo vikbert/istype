@@ -1,1 +1,1 @@
-{"version":1,"defects":{"Vikbert\\Tests\\IsTest::testSomething":5,"Vikbert\\Tests\\IsTest::testIsString":3},"times":{"Vikbert\\Tests\\IsTest::testSomething":0.004,"Vikbert\\Tests\\IsTest::testIsString":0.006}}
+{"version":1,"defects":{"Vikbert\\Tests\\IsTest::testSomething":5,"Vikbert\\Tests\\IsTest::testIsString":3,"Vikbert\\Tests\\IsTest::testIsBool":3},"times":{"Vikbert\\Tests\\IsTest::testSomething":0.004,"Vikbert\\Tests\\IsTest::testIsString":0.005,"Vikbert\\Tests\\IsTest::testIsBool":0.001}}
