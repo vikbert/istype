@@ -24,79 +24,118 @@ final class Is
         return is_bool($value);
     }
 
+    /**
+     * @param mixed $value
+     */
     public static function double($value): bool
     {
         return is_double($value);
     }
 
+    /**
+     * @param mixed $value
+     */
     public static function float($value): bool
     {
         return is_double($value);
     }
 
+    /**
+     * @param mixed $value
+     */
     public static function int($value): bool
     {
         return is_int($value);
     }
 
+    /**
+     * @param mixed $value
+     */
     public static function integer($value): bool
     {
         return is_int($value);
     }
 
+    /**
+     * @param mixed $value
+     */
     public static function numeric($value): bool
     {
         return is_numeric($value);
     }
 
+    /**
+     * @param mixed $value
+     */
     public static function object($value): bool
     {
         return is_object($value);
     }
 
+    /**
+     * @param mixed $value
+     */
     public static function scalar($value): bool
     {
         return is_scalar($value);
     }
 
+    /**
+     * @param mixed $value
+     */
     public static function array($value): bool
     {
         return is_array($value);
     }
 
+    /**
+     * @param mixed $value
+     */
     public static function callable($value): bool
     {
         return is_callable($value);
     }
 
+    /**
+     * @param mixed $value
+     */
     public static function countable($value): bool
     {
         return is_countable($value);
     }
 
+    /**
+     * @param mixed $value
+     */
     public static function iterable($value): bool
     {
         return is_iterable($value);
     }
 
+    /**
+     * @param mixed $value
+     */
     public static function email($value): bool
     {
         return false !== filter_var($value, FILTER_VALIDATE_EMAIL);
     }
 
+    /**
+     * @param mixed $value
+     */
     public static function url($value): bool
     {
         return false !== filter_var($value, FILTER_VALIDATE_URL);
     }
 
-    public static function https($value): bool
+    public static function https(string $value): bool
     {
         $url = parse_url($value);
 
         return strtolower($url['scheme']) == 'https';
     }
 
-    public static function http($value): bool
+    public static function http(string $value): bool
     {
         $url = parse_url($value);
 

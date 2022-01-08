@@ -1,6 +1,6 @@
 <div align="center">
   <img src="./docs/logo.png" width="140px" alt="logo" />
-  <h2>Is::email($value)</h2>
+  <h2>Is::{method}($value)</h2>
   <p>Type checks values in PHP</p>
 
   <p>
