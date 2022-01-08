@@ -149,4 +149,3 @@ XML;
         $this->assertFalse(Is::ip('127.0'));
     }
 }
-
